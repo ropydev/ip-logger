@@ -1,0 +1,97 @@
+const content = document.getElementById("content")
+content.innerHTML = `
+    <label>Usuario</label>
+    <br>
+    <input id="user" type="text">
+    <br>
+    <label>Contraseña</label>
+    <br>
+    <input id="pswd" type="password">
+    <br>
+    <button id="sendBtn">Send</button>
+`
+const btn = document.getElementById("sendBtn")
+btn.addEventListener("click", async () => {
+    const user = document.getElementById("user")
+    const pswd = document.getElementById("pswd")
+    if (user && pswd){
+        if(user.value == "admin" && pswd.value == "4dm1n666"){
+            content.innerHTML = `
+                <h1>Admin Panel</h1>
+                <div>
+                    <h2>Dominio Actual</h2>
+                    <div id="currentDom" class="info"></div>
+                </div>
+                <div>
+                    <h2>IPs Recolectadas</h2>
+                    <div class="info"><p id="ips"></p></div>
+                </div>
+                <div>
+                    <h2>Estadisticas de Paises</h2>
+                    <div id="countryStats" class="info"></div>
+                </div>
+                <button onclick="location.href ='/seeMap'">Ver Mapa Interactivo</button>
+            `
+            const dominio = document.getElementById("currentDom")
+            const ips = document.getElementById("ips")
+            const stats = document.getElementById("countryStats")
+
+            dominio.innerHTML = `<h3>${location.host}</h3>`
+
+            const IpsResponse = await fetch("/getIpsFromTxt")
+            const ipsFromTxt = await IpsResponse.json()
+            ipsFromTxt.forEach(ip => {
+                ips.innerHTML += `${ip}, `
+            });
+
+            const response = await fetch(`/seeCountry`)
+            const data = await response.json()
+            let total = 0
+            data.forEach(country => {
+                stats.innerHTML += `<p>${country[0]}: ${country[1]}</p>`
+                total+=parseInt(country[1])
+            });
+            stats.innerHTML += `<p>Total de IPs Recolectadas: ${total}</p>`
+            stats.innerHTML += `<div id="visualStats"><h2>Estadisticas Visuales</h2> <h2 id="loading">LOADING.</h2></div>`
+            setInterval(() => {
+                const loading = document.getElementById("loading")
+                try{
+                    if (loading.textContent.includes("LOADING")){
+                        if (!loading.textContent.includes("...")){
+                            loading.textContent += "."
+                        }else{
+                            loading.textContent = "LOADING"
+                        }
+                    }
+                }catch(error){
+                    return
+                }
+            }, 500)
+            await fetch("/stats")
+            const visualStats = document.getElementById("visualStats")
+            visualStats.innerHTML = `<img src="/start/stats.png" title="Estadisticas">`
+        }else{
+            const now = new Date();
+            const response = await fetch('https://api.ipify.org?format=json');
+            const data = await response.json();
+            fetch("/alertAdmin", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: `Un usuario ha intentado acceder al panel de control a las ${now.getHours()}:${now.getMinutes()} del ${now.getDay()}/${now.getMonth()}/${now.getFullYear()} desde la ip ${data.ip}. Si no fue usted, le recomiendo cerrar el servidor y abrirlo en otro dominio para evitar filtraciones de las ips recolectadas` })
+            })
+.then(response => {
+if (!response.ok) {
+throw new Error('Error en la solicitud');
+}
+return response.json();
+})
+.then(data => {
+alert("Contrasena Incorrecta, Avisando al administrador de la web y enviando toda la info posible del intruso.");
+})
+.catch(error => {
+console.error('Error:', error);
+});
+
+        }
+    }
+})
