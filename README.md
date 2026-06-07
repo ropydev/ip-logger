@@ -4,22 +4,22 @@
 
 ## 📊 Badges
 
-![License](https://img.shields.io/github/license/bellcodev/IP-Logger?style=for-the-badge&logo=github)
-![Stars](https://img.shields.io/github/stars/bellcodev/IP-Logger?style=for-the-badge&logo=github)
-![Forks](https://img.shields.io/github/forks/bellcodev/IP-Logger?style=for-the-badge&logo=github)
-![Issues](https://img.shields.io/github/issues/bellcodev/IP-Logger?style=for-the-badge&logo=github)
-![Pull Requests](https://img.shields.io/github/issues-pr/bellcodev/IP-Logger?style=for-the-badge&logo=github)
-![Last Commit](https://img.shields.io/github/last-commit/bellcodev/IP-Logger?style=for-the-badge&logo=git)
-![Repo Size](https://img.shields.io/github/repo-size/bellcodev/IP-Logger?style=for-the-badge&logo=github)
-![Code Size](https://img.shields.io/github/languages/code-size/bellcodev/IP-Logger?style=for-the-badge&logo=github)
+![License](https://img.shields.io/github/license/ropydev/ip-logger?style=for-the-badge&logo=github)
+![Stars](https://img.shields.io/github/stars/ropydev/ip-logger?style=for-the-badge&logo=github)
+![Forks](https://img.shields.io/github/forks/ropydev/ip-logger?style=for-the-badge&logo=github)
+![Issues](https://img.shields.io/github/issues/ropydev/ip-logger?style=for-the-badge&logo=github)
+![Pull Requests](https://img.shields.io/github/issues-pr/ropydev/ip-logger?style=for-the-badge&logo=github)
+![Last Commit](https://img.shields.io/github/last-commit/ropydev/ip-logger?style=for-the-badge&logo=git)
+![Repo Size](https://img.shields.io/github/repo-size/ropydev/ip-logger?style=for-the-badge&logo=github)
+![Code Size](https://img.shields.io/github/languages/code-size/ropydev/ip-logger?style=for-the-badge&logo=github)
 
-![Top Language](https://img.shields.io/github/languages/top/bellcodev/IP-Logger?style=for-the-badge&logo=python)
-![Languages Count](https://img.shields.io/github/languages/count/bellcodev/IP-Logger?style=for-the-badge&logo=code)
+![Top Language](https://img.shields.io/github/languages/top/ropydev/IP-Logger?style=for-the-badge&logo=python)
+![Languages Count](https://img.shields.io/github/languages/count/ropydev/IP-Logger?style=for-the-badge&logo=code)
 
 ![Docs](https://img.shields.io/badge/docs-available-brightgreen?style=for-the-badge&logo=readthedocs)
 ![Wiki](https://img.shields.io/badge/wiki-enabled-blue?style=for-the-badge&logo=github)
 
-![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge&logo=github)
+![Status](https://img.shields.io/badge/status-inactive-success?style=for-the-badge&logo=github)
 ![Made With Love](https://img.shields.io/badge/made%20with-%E2%9D%A4-red?style=for-the-badge)
 
 ## ⚒️ Funciones
