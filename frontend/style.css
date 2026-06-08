@@ -1,1 +1,27 @@
+body {
+    font-family: monospace;
+    background: #cccccc;
+    text-align: center;
+}
 
+.info {
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 35px #dddddd;
+    max-width: 800px;
+    margin: auto;
+}
+
+button {
+    background: radial-gradient(#ffffff, #cccccc);
+    border: 1px solid #222222;
+    border-radius: 7px;
+    color: #000000;
+}
+
+.ip {
+    display: flex;
+    margin: 10px;
+}
